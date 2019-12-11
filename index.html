@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Police | Resident Information System BD</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+ function Check() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.display = 'block';
+    } 
+    else {
+        document.getElementById('ifYes').style.display = 'none';
+
+   }
+}
+
+
+</script>
+    <!-- Favicon-->
+
+</head>
+<body class="container">
+<form></br>
+<p style="text-align:center; font-size:25px"> জরিপ কার্যক্রমের মাধ্যমে করদাতা  সনাক্তকরণ  ফরম  </p></br>
+
+<div class="card" style="padding:10px; margin-bottom:10px">
+  <div class="form-group">
+    <label for="tName">করদাতার নাম</label>
+    <input type="text" style="margin-bottom:5px" class="form-control" id="tName"  placeholder="বাংলায়">
+    <input type="text" style="margin-bottom:5px" class="form-control" id="tName"  placeholder="ইংরেজিতে">
+  </div>
+</div>
+
+<div class="card" style="padding:10px; margin-bottom:10px">
+  <div class="form-group">
+    <label for="spouseName">স্ত্রী  / স্বামীর  নাম</label>
+    <input type="text" style="margin-bottom:5px" class="form-control" id="spouseName"  placeholder="বাংলায়">
+    <input type="text" style="margin-bottom:5px" class="form-control" id="spouseName"  placeholder="ইংরেজিতে">
+  </div>
+</div>
+
+<div class="card" style="padding:10px; margin-bottom:10px">
+  <div class="form-group">
+    <label for="fName">পিতার  নাম</label>
+    <input type="text" style="margin-bottom:5px" class="form-control" id="fName"  placeholder="বাংলায়">
+    <input type="text" style="margin-bottom:5px" class="form-control" id="fName"  placeholder="ইংরেজিতে">
+  </div>
+</div>
+
+<div class="card" style="padding:10px; margin-bottom:10px">
+  <div class="form-group">
+    <label for="fName">মাতার  নাম</label>
+    <input type="text" style="margin-bottom:5px" class="form-control" id="fName"  placeholder="বাংলায়">
+    <input type="text" style="margin-bottom:5px" class="form-control" id="fName"  placeholder="ইংরেজিতে">
+  </div>
+</div>
+
+<div class="row" style="padding:10px; margin-bottom:10px">
+    <div class="col-md-6">
+        <input type="text" style="margin-bottom:5px" class="form-control" id="dateofBirth" placeholder="জন্ম তারিখ (দিন/মাস/বছর) " >
+    </div>
+    <div class="col-md-6">
+    	<input type="text" style="margin-bottom:5px" class="form-control" id="nidNumber" placeholder="জাতীয় পরিচয় নম্বর">
+    </div>
+</div>
+
+<div class="card" style="padding:10px; margin-bottom:10px">
+  <div class="form-group">
+    <label for="address">পূর্ণাঙ্গ   ঠিকানা </label>
+    <input type="text" style="margin-bottom:5px" class="form-control" id="address"  placeholder="স্থায়ী ঠিকানা">
+    <input type="text" style="margin-bottom:5px" class="form-control" id="address"  placeholder="বর্তমান ঠিকানা">
+  </div>
+</div>
+
+<div class="row" style="padding:10px; margin-bottom:10px">
+    <div class="col-md-12">
+        <input type="email" style="margin-bottom:5px" class="form-control" id="email" placeholder="ই-মেইল" >
+    </div>
+</div>
+
+<div class="card" style="padding:10px; margin-bottom:10px">
+<label for="phoneNumber"> ফোন নম্বর </label>
+  <div class="row" style="padding:10px; margin-bottom:10px">
+	<div class="col-md-4">
+    <input type="text" style="margin-bottom:5px" class="form-control" id="phoneNumber"  placeholder="বাসা">
+	</div>
+    <div class="col-md-4">
+    <input type="text" style="margin-bottom:5px" class="form-control" id="phoneNumber"  placeholder="অফিস">
+	</div>
+	<div class="col-md-4">
+    <input type="text" style="margin-bottom:5px" class="form-control" id="phoneNumber"  placeholder="ব্যক্তিগত মোবাইল">
+	</div>
+  </div>
+</div>
+
+<div class="row" style="padding:10px; margin-bottom:10px">
+    <div class="col-md-12">
+        <input type="text" style="margin-bottom:5px" class="form-control" id="tinNumber" placeholder="টি.আই.এন / টি. আর.এন নম্বর (যদি থাকে)" >
+    </div>
+</div>
+
+<div class="row" style="padding:10px; margin-bottom:10px">
+    <div class="col-md-12">
+        <input type="text" style="margin-bottom:5px" class="form-control" id="vatRegNumber" placeholder="ভ্যাট রেজিষ্ট্রেশন নম্বর (যদি থাকে)" >
+    </div>
+</div>
+
+
+<div class="card" style="padding:10px; margin-bottom:10px">
+<div class="row" style="padding:10px; margin-bottom:10px">
+	    <div class="col-md-6">
+			<input type="radio" name="house" onclick="javascript:showDetails()" id="yesCheck" value="নিজের বাড়ি">   নিজের বাড়ি
+			<input type="text" style="margin-bottom:5px"  class="form-control"  placeholder=" নিজের বাড়ির আয়াতন (বর্গফুট/বর্গমিটার)" >
+			
+		</div>
+		
+		<div class="col-md-6">
+			<input type="radio"  name="house" onclick="javascript:showDetails()" style="margin-right" id="yesCheck" value="ভাড়া বাড়ি">   ভাড়া বাড়ি
+			<input type="text" style="margin-bottom:5px" class="form-control" id="house" placeholder=" ভাড়া বাড়ির মাসিক ভাড়ারর পরিমাান" >
+		</div>
+		
+</div>
+</div>
+
+<div class="card" style="padding:10px; margin-bottom:10px">
+<div class="row" style="padding:10px; margin-bottom:10px">
+<label for="car"> নিজের  গাড়ী  </label>
+<div class="col-md-6">
+	    <input type="radio" name="car" onclick="javascript:showDetails()" id="car" >     হ্যাঁ
+		<input type="radio" name="car" onclick="javascript:showDetails()" id="car" >     না
+		<input type="text" style="margin-bottom:5px" class="form-control" id="car" placeholder=" নিজের  গাড়ীর নম্বর" >
+		<input type="text" style="margin-bottom:5px" class="form-control" id="car" placeholder=" নিজের  গাড়ীর ক্রয়ের তারিখ (দিন/মাস/বছর)" >
+</div>
+</div>
+</div>		
+<div class="card" style="padding:10px; margin-bottom:10px">
+<label for="income">আয়ের উৎস (প্রযোজ্য ঘরে টিক দিন)  </label></br>
+
+<div class="row" style="padding:10px; margin-bottom:10px">
+<div class="col-md-6">
+		<input type="checkbox" id="salary" >  বেতনভূক্ত হলে
+		<input type="text" style="margin-bottom:5px" class="form-control" id="salary" placeholder=" নিয়োগকারীর নাম ও ঠিকানা" >
+		
+</div>
+<div class="col-md-6">
+		<input type="text" style="margin-bottom:5px; margin-top:25px" class="form-control" id="salary" placeholder=" মাসিক বেতন" >
+</div>				
+</div>
+
+<div class="row" style="padding:10px; margin-bottom:10px">
+<div class="col-md-6">
+		<input type="checkbox" id="business" >  ব্যবসা বাবদ আয় থাকলে
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" ব্যবসার  ঠিকানা" >
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" ব্যবসার  ধরন" >
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" বাৎসরিক বিক্রয় / প্রাপ্তির পরিমান" >
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" বাৎসরিক আয়ের পরিমান" >
+		
+</div>
+<div class="col-md-6">
+		<label for="income">নতুন ব্যবসার ক্ষেত্র  </label></br>
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" ব্যবসা শুরুর তারিখ (দিন/মাস/বছর)" >
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" বিনিয়োগের পরিমান" >
+</div>				
+</div>	
+
+<div class="row" style="padding:10px; margin-bottom:10px">
+<div class="col-md-6">
+		<input type="checkbox" id="business" >  বাড়ি ভাড়া বাবদ আয় থাকলে
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" বাড়ির  ঠিকানা" >		
+</div>
+<div class="col-md-6">
+	
+		<input type="text" style="margin-bottom:5px; margin-top:25px" class="form-control" id="business" placeholder=" মাসিক ভাড়ার পরিমান" >
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" বাড়ি নতুন হলে এর আয়াতন ও নির্মান কাল" >
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" বিনিয়োগের পরিমান" >
+</div>				
+</div>	
+
+<div class="row" style="padding:10px; margin-bottom:10px">
+<div class="col-md-6">
+		<input type="checkbox" id="business" >  পেশাজীবী হলে
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" পেশার নাম" >		
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" কর্মস্থানের  ঠিকানা" >		
+</div>
+<div class="col-md-6">
+		<input type="text" style="margin-bottom:5px; margin-top:25px" class="form-control" id="business" placeholder=" বাৎসরিক প্রাপ্তির পরিমান" >
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" বাৎসরিক আয়ের পরিমান" >
+</div>				
+</div>
+
+<div class="row" style="padding:10px; margin-bottom:10px">
+<div class="col-md-6">
+		<input type="checkbox" id="business" >  কৃষি খাতে আয় থাকলে
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" কৃষি  জমির পরিমান" >		
+			
+</div>
+<div class="col-md-6">
+		<input type="text" style="margin-bottom:5px; margin-top:25px" class="form-control" id="business" placeholder=" বাৎসরিক আয়ের পরিমান" >
+</div>				
+</div>
+
+<div class="row" style="padding:10px; margin-bottom:10px">
+<div class="col-md-6">
+		<input type="checkbox" id="business" >  অন্যান্য আয় থাকলে
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" আয়স্থলেন ঠিকানা" >		
+			
+</div>
+<div class="col-md-6">
+		<input type="text" style="margin-bottom:5px; margin-top:25px" class="form-control" id="business" placeholder=" আয়ের ধরন" >
+		<input type="text" style="margin-bottom:5px" class="form-control" id="business" placeholder=" বাৎসরিক আয়ের পরিমান" >
+</div>				
+</div>
+		
+</div>
+
+
+</form>
+
+	
+</body>
+
+
+</html>
